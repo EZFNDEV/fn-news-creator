@@ -1,3 +1,9 @@
+# Setup
+1. Install Python
+2. Install the requirements (pip3 install -r requirements.txt)
+
+If you want to use Twitter.py install tweepy (pip3 install tweepy)
+
 ## Example:
 ```
 import News
