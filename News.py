@@ -58,14 +58,14 @@ def News1(Message,Language,CustomMessage):
 
     #Fonts
     if Language.upper() == "JA":
-        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.ttf', 32)  
+        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.otf', 32)  
     else:
-        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.ttf', 32)
+        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 32)
     
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.ttf', 25)
-    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 45)
+    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
 
     NewsImage = Image.open(BytesIO(requests.get(Message["image"]).content)) #Download the Imag
     NewsImage = NewsImage.resize((1024, 510), Image.ANTIALIAS) #Resize the downloaded Image
@@ -74,10 +74,10 @@ def News1(Message,Language,CustomMessage):
     TitleFontSize = 60
 
     if Language.upper() == "JA":
-        while ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize).getsize(Title)[0] > 1035:
+        while ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize).getsize(Title)[0] > 1035:
             TitleFontSize -= 1
         
-        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize)
+        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize)
         
         NewDesc = ""
         for Desc in Description.split("\n"):
@@ -86,10 +86,10 @@ def News1(Message,Language,CustomMessage):
 
         Description = NewDesc #Split the Description
     else:
-        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize).getsize(Title)[0] > 1035:
+        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize).getsize(Title)[0] > 1035:
             TitleFontSize -= 1
         
-        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize)
+        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize)
         
         NewDesc = ""
         for Desc in Description.split("\n"):
@@ -132,18 +132,18 @@ def News3(data,Language,CustomMessage):
 
     #Fonts
     if Language.upper() == "JA":
-        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.ttf', 25)  
-        NewsFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', 190)
+        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.otf', 25)  
+        NewsFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', 190)
     else:
-        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/burbanksmall-bold.ttf', 25)
-        NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 235)
+        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 25)
+        NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 235)
         
 
-    DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 35)
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.ttf', 25)
-    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 45)
+    DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 35)
+    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
 
     Background = Image.open("assets/Background.png","r")
     Draw = ImageDraw.Draw(Background)
@@ -177,16 +177,16 @@ def News3(data,Language,CustomMessage):
             msg = Message["body"]
             
         TitleFontSize = 60
-        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize).getsize(Message["title"].upper())[0] > 507:
+        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize).getsize(Message["title"].upper())[0] > 507:
             TitleFontSize -= 1
         if TitleFontSize < TitleFontS:
             TitleFontS = TitleFontSize
             Title = Message["title"]
 
     if Language.upper() == "JA":
-        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontS)
     else:
-        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontS)
 
     if Language.upper() == "JA":
         NewDesc = ""
@@ -209,9 +209,9 @@ def News3(data,Language,CustomMessage):
     NewsCardHeight += Draw.multiline_textsize(msg,font=DescriptionFont,spacing=13)[1] + 7#Add the Description
 
     if Language.upper() == "JA":
-        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontS)
     else:
-        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontS)
 
     #Positions
     Buttom = Background.height - ((Background.height - NewsCardHeight - 122) - ((Background.height - NewsCardHeight - 122) / 2))
@@ -259,10 +259,10 @@ def News3(data,Language,CustomMessage):
         TitleFontSize = 43
         
         if Language.upper() == "JA":
-            while ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize).getsize(Title)[0] > 507:
+            while ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize).getsize(Title)[0] > 507:
                 TitleFontSize -= 1
         
-            TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize)
+            TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize)
             NewDesc = ""
             for Desc in Description.split("\n"):
                 for Des in textwrap.wrap(Desc, width=19):
@@ -270,10 +270,10 @@ def News3(data,Language,CustomMessage):
 
             Description = NewDesc #Split the Description
         else:
-            while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize).getsize(Title)[0] > 507:
+            while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize).getsize(Title)[0] > 507:
                 TitleFontSize -= 1
         
-            TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize)
+            TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize)
             NewDesc = ""
             for Desc in Description.split("\n"):
                 for Des in textwrap.wrap(Desc, width=39):
@@ -300,19 +300,19 @@ def News2(data,Language,CustomMessage):
 
     #Fonts
     if Language.upper() == "JA":
-        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.ttf', 25) 
-        NewsFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', 190)
+        AdspaceFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.otf', 25) 
+        NewsFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', 190)
     else:
-        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/burbanksmall-bold.ttf', 25)
-        NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 235)
+        AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 25)
+        NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 235)
         
 
-    DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 35)
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.ttf', 25)
-    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 45)
-    NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', 235)
+    DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 35)
+    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
+    NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 235)
 
     Background = Image.open("assets/Background.png","r")
     Draw = ImageDraw.Draw(Background)
@@ -346,16 +346,16 @@ def News2(data,Language,CustomMessage):
             msg = Message["body"]
             
         TitleFontSize = 60
-        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize).getsize(Message["title"].upper())[0] > 507:
+        while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize).getsize(Message["title"].upper())[0] > 507:
             TitleFontSize -= 1
         if TitleFontSize < TitleFontS:
             TitleFontS = TitleFontSize
             Title = Message["title"]
 
     if Language.upper() == "JA":
-        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontS)
     else:
-        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontS)
 
     if Language.upper() == "JA":
         NewDesc = ""
@@ -378,9 +378,9 @@ def News2(data,Language,CustomMessage):
     NewsCardHeight += Draw.multiline_textsize(msg,font=DescriptionFont,spacing=13)[1] + 7#Add the Description
 
     if Language.upper() == "JA":
-        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontS)
     else:
-        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontS)
+        TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontS)
 
     #Positions
     Buttom = Background.height - ((Background.height - NewsCardHeight - 122) - ((Background.height - NewsCardHeight - 122) / 2))
@@ -428,10 +428,10 @@ def News2(data,Language,CustomMessage):
         TitleFontSize = 43
         
         if Language.upper() == "JA":
-            while ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize).getsize(Title)[0] > 507:
+            while ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize).getsize(Title)[0] > 507:
                 TitleFontSize -= 1
         
-            TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.ttf', TitleFontSize)
+            TitleFont = ImageFont.truetype('assets/Fonts/NIS_JYAU.otf', TitleFontSize)
             NewDesc = ""
             for Desc in Description.split("\n"):
                 for Des in textwrap.wrap(Desc, width=19):
@@ -439,10 +439,10 @@ def News2(data,Language,CustomMessage):
 
             Description = NewDesc #Split the Description
         else:
-            while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize).getsize(Title)[0] > 507:
+            while ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize).getsize(Title)[0] > 507:
                 TitleFontSize -= 1
         
-            TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.ttf', TitleFontSize)
+            TitleFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', TitleFontSize)
             NewDesc = ""
             for Desc in Description.split("\n"):
                 for Des in textwrap.wrap(Desc, width=39):
