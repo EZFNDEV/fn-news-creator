@@ -2,8 +2,8 @@
     "Language" : "en",
     "CustomMessage" : "Follow @LupusLeaks on Twitter",
     "CheckNewsEveryXSeconds" : 5,
-    "consumer_key" : "2mJc6n61NoKJdH4AjxhY7BG0N",
-    "consumer_secret" : "s9vRc3v5YWebPbUM4wUCQt8q9NC5Ta7mGedTPK2IeG1SzkOiNg",
-    "access_token" : "1084673957406625792-kbtCNGEoEOaM2mfTNPcvPSOGhLx0kT",
-    "access_token_secret" : "HIorowaMQjUZloSQ9ULhOpSyaaKOZte6qtcq6SwRpplD9"
+    "consumer_key" : "XXXX",
+    "consumer_secret" : "XXXX",
+    "access_token" : "XXXX",
+    "access_token_secret" : "XXXX"
 }
