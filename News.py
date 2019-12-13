@@ -9,8 +9,47 @@ TitleColor = (36,41,63)
 NewsBGColor = (28,164,211)
 DescriptionColor = (64,159,233)
 
+def GetSTWNews():
+    try:
+        with open("Config.json") as f:
+            Config = json.loads(f.read())
+            Language = Config["Language"]
+            CustomMessage = Config["CustomMessage"]
+    except:
+        print("Sorry something went wrong while reading the config file...")
+        return
+    FortniteGame = requests.get("https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game",headers={'Accept-Language' : Language.lower()}).json()["savetheworldnews"]["news"]["messages"]
+    
+    AvoidScam = "https://cdn2.unrealengine.com/Fortnite/fortnite-game/battleroyalenews/v42/BR04_MOTD_Shield-1024x512-75eacc957ecc88e76693143b6256ba06159efb76.jpg"
 
-def GetNews():
+    if (len(FortniteGame) == 1 and FortniteGame[0]["image"] != AvoidScam) or (len(FortniteGame) == 2 and FortniteGame[1]["image"] == AvoidScam):
+        return News1(FortniteGame[0],Language,CustomMessage)
+    elif (len(FortniteGame) == 2 and FortniteGame[0]["image"] != AvoidScam and FortniteGame[1]["image"] != AvoidScam):
+        return News2(FortniteGame,Language,CustomMessage)
+    else:
+        return News3(FortniteGame,Language,CustomMessage)
+
+def GetCreativeNews():
+    try:
+        with open("Config.json") as f:
+            Config = json.loads(f.read())
+            Language = Config["Language"]
+            CustomMessage = Config["CustomMessage"]
+    except:
+        print("Sorry something went wrong while reading the config file...")
+        return
+    FortniteGame = requests.get("https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game",headers={'Accept-Language' : Language.lower()}).json()["creativenews"]["news"]["messages"]
+    
+    AvoidScam = "https://cdn2.unrealengine.com/Fortnite/fortnite-game/battleroyalenews/v42/BR04_MOTD_Shield-1024x512-75eacc957ecc88e76693143b6256ba06159efb76.jpg"
+
+    if (len(FortniteGame) == 1):
+        return News1(FortniteGame[0],Language,CustomMessage)
+    elif (len(FortniteGame) == 2):
+        return News2(FortniteGame,Language,CustomMessage)
+    else:
+        return News3(FortniteGame,Language,CustomMessage)
+
+def GetBattleRoyaleNews():
     try:
         with open("Config.json") as f:
             Config = json.loads(f.read())
@@ -23,9 +62,9 @@ def GetNews():
     
     AvoidScam = "https://cdn2.unrealengine.com/Fortnite/fortnite-game/battleroyalenews/v42/BR04_MOTD_Shield-1024x512-75eacc957ecc88e76693143b6256ba06159efb76.jpg"
 
-    if (len(FortniteGame) == 1 and FortniteGame[0]["image"] != AvoidScam) or (len(FortniteGame) == 2 and FortniteGame[1]["image"] == AvoidScam):
+    if (len(FortniteGame) == 1):
         return News1(FortniteGame[0],Language,CustomMessage)
-    elif (len(FortniteGame) == 2 and FortniteGame[0]["image"] != AvoidScam and FortniteGame[1]["image"] != AvoidScam):
+    elif (len(FortniteGame) == 2):
         return News2(FortniteGame,Language,CustomMessage)
     else:
         return News3(FortniteGame,Language,CustomMessage)
