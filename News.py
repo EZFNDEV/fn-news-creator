@@ -62,9 +62,9 @@ def News1(Message,Language,CustomMessage):
         DescriptionFont = ImageFont.truetype('assets/Fonts/NotoSansJP-Bold.otf', 32)  
     else:
         AdspaceFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 32)
-        DescriptionFont = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 32)
+        DescriptionFont = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 32)
     
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    GenAt = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 25)
     Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
 
     NewsImage = Image.open(BytesIO(requests.get(Message["image"]).content)) #Download the Imag
@@ -111,7 +111,7 @@ def News1(Message,Language,CustomMessage):
     Draw.rectangle((Left,Top,Right,Buttom),fill="white")#Draw White Box
     Draw.text((Left + 28,Top + 5 + NewsImage.height + 9),Title,TitleColor, font=TitleFont) #Draw Title
     Draw.multiline_text((Left + 29, Top + NewsImage.height + TitleFont.getsize(Title)[1] - 2),Description,DescriptionColor,font=DescriptionFont,spacing=17) #Draw Description
-    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and Responsive Owners'),font=GenAt) #Draw Gen. At
+    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and their respective owners.'),font=GenAt) #Draw Gen. At
     if Credits.getsize("Made by @LupusLeaks")[1] < (Top - 30):
         Draw.text(((Background.width - Credits.getsize("Made by @LupusLeaks")[0]) / 2,Top - 65),"Made by @LupusLeaks",font=Credits)
     Background.paste(NewsImage,(int(Left) + 5,int(Top) + 5)) #Paste News Image
@@ -142,7 +142,7 @@ def News3(data,Language,CustomMessage):
         
 
     DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 35)
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    GenAt = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 25)
     Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
 
     Background = Image.open("assets/Background.png","r")
@@ -239,7 +239,7 @@ def News3(data,Language,CustomMessage):
     Draw.text((Middle,Top - Y),"Made by @LupusLeaks on Twitter",font=Credits)
 
     #Draw Date
-    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and Responsive Owners'),font=GenAt) #Draw Gen. At
+    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and their respective owners.'),font=GenAt) #Draw Gen. At
 
     #Draw Custom Message
     Middle = (Background.width - Credits.getsize(CustomMessage)[0]) / 2
@@ -310,7 +310,7 @@ def News2(data,Language,CustomMessage):
         
 
     DateFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 35)
-    GenAt = ImageFont.truetype('assets/Fonts/BurbankSmall-Bold.otf', 25)
+    GenAt = ImageFont.truetype('assets/Fonts/burbanksmall-bold.otf', 25)
     Credits = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 45)
     NewsFont = ImageFont.truetype('assets/Fonts/BurbankBigCondensed-Black.otf', 235)
 
@@ -408,7 +408,7 @@ def News2(data,Language,CustomMessage):
     Draw.text((Middle,Top - Y),"Made by @LupusLeaks on Twitter",font=Credits)
 
     #Draw Date
-    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and Responsive Owners'),font=GenAt) #Draw Gen. At
+    Draw.text((10,10),datetime.now().strftime('Generated at %Y-%m-%d %H:%M:%S UTC | Assets Property of Epic Games and their respective owners.'),font=GenAt) #Draw Gen. At
 
     #Draw Custom Message
     Middle = (Background.width - Credits.getsize(CustomMessage)[0]) / 2
