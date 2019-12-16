@@ -5,6 +5,10 @@
 If you want to use Twitter.py install tweepy (pip3 install tweepy)
 
 ## Example:
+> https://fn-news.glitch.me/br Fortnite Battle Royale News
+> https://fn-news.glitch.me/creative Fortnite Creative News
+> https://fn-news.glitch.me/stw Fortnite Save the World News
+
 ```
 import News
 
